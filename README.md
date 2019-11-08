@@ -1,6 +1,10 @@
 # MonkeyApp
-Android APP /n
+Android APP
 
-Developers: Fromiti / Batuzzai /n
-Santiago, Chile /n
+Developers: Fromiti / Batuzzai.
+
+
+Santiago, Chile
+
+
 2019
