@@ -6,7 +6,7 @@
         <form>
             Usuario: <input type="text" name="user"><br>
             Contraseña: <input type="password" name="pwd"><br>
-            <input type="submit" value = "Entrar">
+            <input type="submit" value = "Entrars">
         </form>        
     </body>
 </html>
