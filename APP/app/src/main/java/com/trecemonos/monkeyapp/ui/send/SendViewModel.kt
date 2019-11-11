@@ -7,7 +7,7 @@ import android.arch.lifecycle.ViewModel
 class SendViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is send Fragment"
+        value = "Desarrolladores:"
     }
     val text: LiveData<String> = _text
 }

@@ -30,7 +30,7 @@ import android.support.v4.app.SupportActivity
 import android.support.v4.app.SupportActivity.ExtraData
 import android.support.v4.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
+import android.widget.Button
 
 
 /**
@@ -45,6 +45,10 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        //DEBUG SKIP BOTON
+        skip_button.setOnClickListener {
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            startActivity(intent) }
         // Set up the login form.
         populateAutoComplete()
         password.setOnEditorActionListener(TextView.OnEditorActionListener { _, id, _ ->

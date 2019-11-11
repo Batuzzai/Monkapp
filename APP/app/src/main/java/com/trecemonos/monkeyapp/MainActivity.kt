@@ -13,10 +13,47 @@ import android.support.design.widget.NavigationView
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
+import android.widget.Toast
+import android.content.Intent
+import android.support.v4.app.SupportActivity
+import android.support.v4.app.SupportActivity.ExtraData
+import android.support.v4.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.net.Uri
+import android.util.Log
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+
+    protected fun sendEmail() {
+        Log.i("Enviar emaiñ", "")
+
+        val TO = arrayOf("13monos@programmer.net")
+        val CC = arrayOf("xyz@gmail.com")
+        val emailIntent = Intent(Intent.ACTION_SEND)
+        emailIntent.data = Uri.parse("mailto:")
+        emailIntent.type = "text/plain"
+
+
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO)
+        emailIntent.putExtra(Intent.EXTRA_CC, CC)
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Sujeto:")
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Escriba mensaje aquí")
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Enviar email..."))
+            finish()
+            Log.i("Enviando email...", "")
+        } catch (ex: android.content.ActivityNotFoundException) {
+            Toast.makeText(
+                this@MainActivity,
+                "Email no instalado", Toast.LENGTH_SHORT
+            ).show()
+        }
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +63,8 @@ class MainActivity : AppCompatActivity() {
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            Snackbar.make(view, "Enviar Email", Snackbar.LENGTH_LONG)
+                sendEmail()
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)

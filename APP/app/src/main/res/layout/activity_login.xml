@@ -60,7 +60,8 @@
                         android:imeOptions="actionUnspecified"
                         android:inputType="textPassword"
                         android:maxLines="1"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:importantForAutofill="no" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -84,4 +85,11 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+            android:id="@+id/skip_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/design_default_color_primary"
+            android:text="@string/debug" />
 </LinearLayout>
