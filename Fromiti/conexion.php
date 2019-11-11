@@ -3,7 +3,7 @@
     $hostname='localhost';
     $database='registro_de_usuarios';
     $username='root';
-    $password='';-
+    $password='';
 
     $conexion = new mysqli($hostname, $username, $password, $database);
     if($conexion->connect_errno){
