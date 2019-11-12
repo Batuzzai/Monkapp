@@ -49,6 +49,11 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
         skip_button.setOnClickListener {
             val intent = Intent(this@LoginActivity, MainActivity::class.java)
             startActivity(intent) }
+        //REGISTER BOTON
+        register_button.setOnClickListener {
+            val intent = Intent( this@LoginActivity, RegisterActivity::class.java)
+            startActivity(intent)
+        }
         // Set up the login form.
         populateAutoComplete()
         password.setOnEditorActionListener(TextView.OnEditorActionListener { _, id, _ ->
