@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MonkeyAPP</string>
+    <string name="app_name">Monkapp</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Contraseña</string>
@@ -15,10 +15,10 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">MonkeyAPP</string>
-    <string name="nav_header_subtitle">ALPHA V0.01</string>
+    <string name="nav_header_title">Monkapp</string>
+    <string name="nav_header_subtitle">ALPHA V0.03</string>
     <string name="nav_header_desc">Menú</string>
-    <string name="action_settings">Configuraciones</string>
+    <string name="action_settings">Configuración</string>
 
     <string name="menu_home">Inicio</string>
     <string name="menu_gallery">Galería</string>

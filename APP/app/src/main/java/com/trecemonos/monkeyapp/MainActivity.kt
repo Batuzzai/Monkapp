@@ -28,24 +28,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     protected fun sendEmail() {
-        Log.i("Enviar emaiñ", "")
 
         val TO = arrayOf("13monos@programmer.net")
-        val CC = arrayOf("xyz@gmail.com")
         val emailIntent = Intent(Intent.ACTION_SEND)
         emailIntent.data = Uri.parse("mailto:")
         emailIntent.type = "text/plain"
 
 
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO)
-        emailIntent.putExtra(Intent.EXTRA_CC, CC)
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Sujeto:")
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Escriba mensaje aquí")
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Monkapp Support:")
 
         try {
-            startActivity(Intent.createChooser(emailIntent, "Enviar email..."))
+            startActivity(Intent.createChooser(emailIntent, ""))
             finish()
-            Log.i("Enviando email...", "")
         } catch (ex: android.content.ActivityNotFoundException) {
             Toast.makeText(
                 this@MainActivity,

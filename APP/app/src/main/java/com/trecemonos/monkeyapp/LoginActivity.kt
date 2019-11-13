@@ -55,20 +55,28 @@ class LoginActivity : AppCompatActivity() {
         }
         // LOGIN BOTON )
 
-        login_button.setOnClickListener { validarUser("https://13monoscl.000webhostapp.com/bds/login.php") }
+        login_button.setOnClickListener {
+            validarUser("https://13monoscl.000webhostapp.com/bds/login.php")
+        }
     }
 
     private fun validarUser(URL: String) {
         val stringRequest = object : StringRequest(Request.Method.POST, URL, Response.Listener { s ->
                 // Your success code here
-                if(s.isNotEmpty()){
-                    login_button.setOnClickListener {
+
+
+
+                if(s.equals("True",true)){
+                        showProgress(true)
                         Toast.makeText(this@LoginActivity, "CONECTADO SATISFACTORIAMENTE", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this@LoginActivity, MainActivity::class.java)
                         startActivity(intent)
-                    }
+
                 }else{
+                    showProgress(true)
                     Toast.makeText(this@LoginActivity, "CORREO O CONTRASEÑA INCORRECTOS", Toast.LENGTH_SHORT).show()
+                    val intent2 = Intent(this@LoginActivity, MainActivity::class.java)
+                    startActivity(intent2)
                 }
             }, Response.ErrorListener { e ->
                 // Your error code here
@@ -77,8 +85,8 @@ class LoginActivity : AppCompatActivity() {
             }) {
             override fun getParams(): Map<String, String> {
                 val parametros = HashMap<String,String>()
-                parametros.put("contrasena",password.text.toString())
                 parametros.put("correo",email.text.toString())
+                parametros.put("contrasena",password.text.toString())
 
                 return parametros
             }
