@@ -1,6 +1,6 @@
 <?php
     
-	$hostname='localhost';
+    $hostname='localhost';
     $database='id11498467_registro_de_usuarios';
     $username='id11498467_root';
     $password='nokia303..';
