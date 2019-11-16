@@ -16,7 +16,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Monkapp</string>
-    <string name="nav_header_subtitle">ALPHA V0.03</string>
+    <string name="nav_header_subtitle">ALPHA V0.04</string>
     <string name="nav_header_desc">Menú</string>
     <string name="action_settings">Configuración</string>
 

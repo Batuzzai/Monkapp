@@ -71,12 +71,14 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this@LoginActivity, "CONECTADO SATISFACTORIAMENTE", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this@LoginActivity, MainActivity::class.java)
                         startActivity(intent)
+                        showProgress(false)
 
                 }else{
                     showProgress(true)
                     Toast.makeText(this@LoginActivity, "CORREO O CONTRASEÑA INCORRECTOS", Toast.LENGTH_SHORT).show()
                     val intent2 = Intent(this@LoginActivity, MainActivity::class.java)
                     startActivity(intent2)
+                    showProgress(false)
                 }
             }, Response.ErrorListener { e ->
                 // Your error code here
@@ -116,8 +118,7 @@ class LoginActivity : AppCompatActivity() {
         // for very easy animations. If available, use these APIs to fade-in
         // the progress spinner.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-            val shortAnimTime =
-                resources.getInteger(android.R.integer.config_shortAnimTime).toLong()
+            val shortAnimTime : Long = resources.getInteger(android.R.integer.config_shortAnimTime).toLong()
 
             login_form.visibility = if (show) View.GONE else View.VISIBLE
             login_form.animate()
