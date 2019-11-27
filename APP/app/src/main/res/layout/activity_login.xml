@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:gravity="center_horizontal"
@@ -8,10 +9,19 @@
               android:paddingBottom="@dimen/activity_vertical_margin"
               android:paddingLeft="@dimen/activity_horizontal_margin"
               android:paddingRight="@dimen/activity_horizontal_margin"
+              android:background="@drawable/geometric"
               android:paddingTop="@dimen/activity_vertical_margin"
               tools:context=".LoginActivity">
 
     <!-- Login progress -->
+
+    <ImageView
+            android:id="@+id/loginLogo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/monkapp"
+            android:contentDescription="@string/devs" />
+
     <ProgressBar
             android:id="@+id/login_progress"
             style="?android:attr/progressBarStyleLarge"
@@ -22,8 +32,9 @@
 
     <ScrollView
             android:id="@+id/login_form"
-            android:layout_width="match_parent"
-            android:layout_height="490dp">
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="25dp">
 
         <LinearLayout
                 android:id="@+id/email_login_form"
@@ -36,11 +47,10 @@
                     android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                        android:id="@+id/email"
+                        android:id="@+id/usuariologin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_email"
-                        android:inputType="textEmailAddress"
+                        android:hint="@string/nick"
                         android:maxLines="1"
                         android:singleLine="true" />
 
@@ -58,38 +68,69 @@
                         android:imeActionId="6"
                         android:imeActionLabel="@string/action_sign_in_short"
                         android:imeOptions="actionUnspecified"
+                        android:importantForAutofill="no"
                         android:inputType="textPassword"
                         android:maxLines="1"
-                        android:singleLine="true"
-                        android:importantForAutofill="no" />
+                        android:singleLine="true" />
 
-            </android.support.design.widget.TextInputLayout>
+            </android.support.design.widget.TextInputLayout><![CDATA[
+
+            #android:text="@string/login"
+                    #android:textStyle="bold"
+                    #android:textColor="@color/walter"
+                    #android:background="@color/kk"/>
+
+
+
+
+
+
+
+            ]]>
 
             <Button
                     android:id="@+id/login_button"
                     style="?android:textAppearanceSmall"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="277dp"
+                    android:layout_height="78dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/login"
-                    android:textStyle="bold" />
+                    android:background="@drawable/botonlogin" />
 
             <Button
                     android:id="@+id/register_button"
                     style="?android:textAppearanceSmall"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="36dp"
                     android:layout_marginTop="5dp"
-                    android:text="@string/registrarse"
-                    android:textStyle="bold" />
+                    android:background="@drawable/botonregister" />
+            #android:text="@string/registrarse"
+                    #android:textStyle="bold"
+                    #android:textColor="@color/walter"
+                    #android:background="@color/kk"/>
 
         </LinearLayout>
     </ScrollView>
 
+    <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="88dp"
+            android:layout_height="69dp"
+            app:srcCompat="@drawable/tw"
+            android:contentDescription="@string/devs" />
+
+    <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="90dp"
+            android:layout_height="47dp"
+            android:contentDescription="@string/devs"
+            app:srcCompat="@drawable/yb" />
+
     <Button
             android:id="@+id/skip_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
             android:background="@color/design_default_color_primary"
-            android:text="@string/debug" />
+            android:text="@string/debug"
+            android:layout_marginTop="50dp"/>
+
 </LinearLayout>

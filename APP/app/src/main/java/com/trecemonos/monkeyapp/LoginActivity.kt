@@ -66,17 +66,17 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-                if(s.equals("True",true)){
+                if(s.equals("conectadoUsuario o contraseña incorrectos",true)){
                         showProgress(true)
-                        Toast.makeText(this@LoginActivity, "CONECTADO SATISFACTORIAMENTE", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                        startActivity(intent)
+                        Toast.makeText(this@LoginActivity, s.toString(), Toast.LENGTH_SHORT).show()
+                        showProgress(false)
 
                 }else{
                     showProgress(true)
-                    Toast.makeText(this@LoginActivity, "CORREO O CONTRASEÑA INCORRECTOS", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, s.toString(), Toast.LENGTH_SHORT).show()
                     val intent2 = Intent(this@LoginActivity, MainActivity::class.java)
                     startActivity(intent2)
+                    showProgress(false)
                 }
             }, Response.ErrorListener { e ->
                 // Your error code here
@@ -85,7 +85,7 @@ class LoginActivity : AppCompatActivity() {
             }) {
             override fun getParams(): Map<String, String> {
                 val parametros = HashMap<String,String>()
-                parametros.put("correo",email.text.toString())
+                parametros.put("nombre_usuario",usuariologin.text.toString())
                 parametros.put("contrasena",password.text.toString())
 
                 return parametros
@@ -116,8 +116,7 @@ class LoginActivity : AppCompatActivity() {
         // for very easy animations. If available, use these APIs to fade-in
         // the progress spinner.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-            val shortAnimTime =
-                resources.getInteger(android.R.integer.config_shortAnimTime).toLong()
+            val shortAnimTime : Long = resources.getInteger(android.R.integer.config_shortAnimTime).toLong()
 
             login_form.visibility = if (show) View.GONE else View.VISIBLE
             login_form.animate()

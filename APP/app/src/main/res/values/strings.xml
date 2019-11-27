@@ -16,7 +16,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Monkapp</string>
-    <string name="nav_header_subtitle">ALPHA V0.03</string>
+    <string name="nav_header_subtitle">ALPHA V0.05</string>
     <string name="nav_header_desc">Menú</string>
     <string name="action_settings">Configuración</string>
 
@@ -34,9 +34,8 @@
     <string name="debug">SKIP MENU</string>
 
     <string name="registro_title">REGISTRO</string>
-    <string name="names">Nombres</string>
-    <string name="surnames">Apellidos</string>
-    <string name="age">Edad</string>
+    <string name="names">Nombre y Apellido</string>
+    <string name="nick">Nombre de usuario</string>
     <string name="reppswd">Repetir contraseña</string>
     <string name="terminos">Acepto las condiciones y términos del servicio</string>
 </resources>

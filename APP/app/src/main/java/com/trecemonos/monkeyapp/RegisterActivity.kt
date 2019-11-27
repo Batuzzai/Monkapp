@@ -2,9 +2,12 @@ package com.trecemonos.monkeyapp
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.content.Intent
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
 import com.android.volley.Request
@@ -20,26 +23,33 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
         register_button2.setOnClickListener{
             conectarse("https://13monoscl.000webhostapp.com/bds/insertar_registro.php")
+            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+            startActivity(intent)
+            showProgress(false)
         }
     }
 
     private fun conectarse(URL : String){
         val stringRequest = object : StringRequest(Request.Method.POST, URL, Response.Listener { s ->
             // Your success code here
-            Toast.makeText(applicationContext,"REGISTRADO SATISFACTORIAMENTE",Toast.LENGTH_SHORT).show()
+
+            Toast.makeText(applicationContext,s.toString(),Toast.LENGTH_LONG).show()
+            showProgress(true)
         }, Response.ErrorListener { e ->
             // Your error code here
-            Toast.makeText(applicationContext, "ERROR AL REGISTRAR",Toast.LENGTH_SHORT).show()
+            showProgress(true)
+            Toast.makeText(applicationContext, e.toString(),Toast.LENGTH_SHORT).show()
         }) {
             override fun getParams(): Map<String, String> {
                 val parametros = HashMap<String,String>()
-                parametros.put("nombres", nombres.text.toString())
-                parametros.put("apellidos",apellidos.text.toString())
+                parametros.put("nombre_apellido", nombres.text.toString())
+                parametros.put("contrasena2",rptpswd.text.toString())
                 parametros.put("contrasena",pswd.text.toString())
                 parametros.put("correo",correo.text.toString())
-                parametros.put("edad",edad.text.toString())
+                parametros.put("nombre_usuario",nick.text.toString())
 
                 return parametros
             }
@@ -57,13 +67,13 @@ class RegisterActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             val shortAnimTime = resources.getInteger(android.R.integer.config_shortAnimTime).toLong()
 
-            register_form.visibility = if (show) View.GONE else View.VISIBLE
-            register_form.animate()
+            register_body_form.visibility = if (show) View.GONE else View.VISIBLE
+            register_body_form.animate()
                 .setDuration(shortAnimTime)
                 .alpha((if (show) 0 else 1).toFloat())
                 .setListener(object : AnimatorListenerAdapter() {
                     override fun onAnimationEnd(animation: Animator) {
-                        register_form.visibility = if (show) View.GONE else View.VISIBLE
+                        register_body_form.visibility = if (show) View.GONE else View.VISIBLE
                     }
                 })
 
@@ -80,7 +90,7 @@ class RegisterActivity : AppCompatActivity() {
             // The ViewPropertyAnimator APIs are not available, so simply show
             // and hide the relevant UI components.
             register_progress.visibility = if (show) View.VISIBLE else View.GONE
-            register_form.visibility = if (show) View.GONE else View.VISIBLE
+            register_body_form.visibility = if (show) View.GONE else View.VISIBLE
         }
     }
 }

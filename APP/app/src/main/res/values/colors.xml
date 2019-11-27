@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="amarelo">#ffcc00</color>
+    <color name="walter">#ffffff</color>
+    <color name="kk">#332900</color>
+    <color name="rj">#cc0000</color>
+    <color name="ng">#000000</color>
 </resources>
