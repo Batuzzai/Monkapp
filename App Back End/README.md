@@ -1,5 +1,4 @@
 En el area de back end de la app se utiliza MySql como base de datos para almacenar los datos de los usuarios registrados y PHP como lenguaje de procesamiento de datos.
 
-El usuario no interactúa directamente con el Back End, de ahí su nombre. 
+Se usa una copia de archivos usada en el ámbito local para hacer pruebas en relacion al procesamiento de datos con PHP y MySql.
 
-Se planea dar una gran cantidad de carácteristicas a la aplicacion Monkapp, y de esta manera convertir esta aplicación en un software auténtico e interesante.
