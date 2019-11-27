@@ -1,29 +1,34 @@
 <?php
-    
-    $hostname='localhost';
-    $database='id11498467_registro_de_usuarios';
-    $username='id11498467_root';
-    $password='nokia303..';
+    session_start();
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
+    include_once 'conexion_dbs/conexion.php';
+    $usuario = $_POST['nombre_usuario'];
+    $password =$_POST['contrasena'];
 
-    $con = mysqli_connect($hostname, $username, $password, $database);
+    $sql = 'SELECT * FROM usuarios WHERE nick = ?';    
+    $sentencia = $pdo->prepare($sql);  
+    $sentencia->execute(array($usuario));       // Verificando usuario duplicado   
+    $resultado = $sentencia->fetch();       // Devuelve arreglo 
 
-    $email = $_POST['correo'];
-    $password = $_POST['contrasena'];
-
-    $Sql_Query = "select * from usuarios where correo = '$email' and contrasena = '$password' ";
-
-    $check = mysqli_fetch_array(mysqli_query($con,$Sql_Query));
-
-        if(isset($check)){
-            echo "True";
-        }else{
-            echo "False";
-        }
-}else{
-    echo "Check Again";
+    if(!$resultado){
+        echo'<script type="text/javascript">
+        alert("Usuario o contraseña incorrectos");
+        window.location.href="index.php";
+        </script>';
+        die();
     }
-    mysqli_close($con);
 
+    if(password_verify($password, $resultado['contrasena'])){
+
+        $_SESSION['user'] = $resultado['nombre_apellido'];  
+        
+        header('Location:Pag_principal.php');
+    
+    }else{
+        echo'<script type="text/javascript">
+        alert("Usuario o contraseña incorrectos");
+        window.location.href="index.php";
+        </script>';
+        die();
+    }
 ?>
