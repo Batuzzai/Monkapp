@@ -9,7 +9,7 @@
               android:paddingBottom="@dimen/activity_vertical_margin"
               android:paddingLeft="@dimen/activity_horizontal_margin"
               android:paddingRight="@dimen/activity_horizontal_margin"
-              android:background="@color/amarelo"
+              android:background="@drawable/geometric"
               android:paddingTop="@dimen/activity_vertical_margin"
               tools:context=".LoginActivity">
 
@@ -19,7 +19,7 @@
             android:id="@+id/loginLogo"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            app:srcCompat="@drawable/ttmlogo"
+            app:srcCompat="@drawable/monkapp"
             android:contentDescription="@string/devs" />
 
     <ProgressBar
@@ -47,11 +47,10 @@
                     android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                        android:id="@+id/email"
+                        android:id="@+id/usuariologin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_email"
-                        android:inputType="textEmailAddress"
+                        android:hint="@string/nick"
                         android:maxLines="1"
                         android:singleLine="true" />
 
@@ -74,29 +73,40 @@
                         android:maxLines="1"
                         android:singleLine="true" />
 
-            </android.support.design.widget.TextInputLayout>
+            </android.support.design.widget.TextInputLayout><![CDATA[
+
+            #android:text="@string/login"
+                    #android:textStyle="bold"
+                    #android:textColor="@color/walter"
+                    #android:background="@color/kk"/>
+
+
+
+
+
+
+
+            ]]>
 
             <Button
                     android:id="@+id/login_button"
                     style="?android:textAppearanceSmall"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="277dp"
+                    android:layout_height="78dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/login"
-                    android:textStyle="bold"
-                    android:textColor="@color/walter"
-                    android:background="@color/kk"/>
+                    android:background="@drawable/botonlogin" />
 
             <Button
                     android:id="@+id/register_button"
                     style="?android:textAppearanceSmall"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="36dp"
                     android:layout_marginTop="5dp"
-                    android:text="@string/registrarse"
-                    android:textStyle="bold"
-                    android:textColor="@color/walter"
-                    android:background="@color/kk"/>
+                    android:background="@drawable/botonregister" />
+            #android:text="@string/registrarse"
+                    #android:textStyle="bold"
+                    #android:textColor="@color/walter"
+                    #android:background="@color/kk"/>
 
         </LinearLayout>
     </ScrollView>

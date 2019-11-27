@@ -35,20 +35,21 @@ class RegisterActivity : AppCompatActivity() {
     private fun conectarse(URL : String){
         val stringRequest = object : StringRequest(Request.Method.POST, URL, Response.Listener { s ->
             // Your success code here
-            Toast.makeText(applicationContext,"REGISTRADO SATISFACTORIAMENTE",Toast.LENGTH_SHORT).show()
+
+            Toast.makeText(applicationContext,s.toString(),Toast.LENGTH_LONG).show()
             showProgress(true)
         }, Response.ErrorListener { e ->
             // Your error code here
             showProgress(true)
-            Toast.makeText(applicationContext, "ERROR AL REGISTRAR",Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, e.toString(),Toast.LENGTH_SHORT).show()
         }) {
             override fun getParams(): Map<String, String> {
                 val parametros = HashMap<String,String>()
-                parametros.put("nombres", nombres.text.toString())
-                parametros.put("apellidos",apellidos.text.toString())
+                parametros.put("nombre_apellido", nombres.text.toString())
+                parametros.put("contrasena2",rptpswd.text.toString())
                 parametros.put("contrasena",pswd.text.toString())
                 parametros.put("correo",correo.text.toString())
-                parametros.put("edad",edad.text.toString())
+                parametros.put("nombre_usuario",nick.text.toString())
 
                 return parametros
             }
