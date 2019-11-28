@@ -17,7 +17,7 @@
     if($resultado){                                 // en caso de ya estar en uso el user alerta al usuario
         echo'<script type="text/javascript">   
         alert("Usuario ya en uso");
-        window.location.href="index.php";
+        window.location.href="index";
         </script>';
         die();
     }
@@ -33,7 +33,7 @@
     if($resultado1){                                 // en caso de ya estar en uso el correo alerta al usuario
         echo'<script type="text/javascript">   
         alert("Correo ya en uso");
-        window.location.href="index.php";
+        window.location.href="index";
         </script>';
         die();
     }    
@@ -50,7 +50,7 @@
         
         echo'<script type="text/javascript">
         alert("Registrado satisfactoriamente");     
-        window.location.href="index.php";
+        window.location.href="index";
         </script>';         // sign up satisfactorio
                 
     }else{
@@ -58,7 +58,7 @@
         $pdo = NULL; // Cierra conexion         // en caso de las pass no ser iguales alerta al usuario
         echo'<script type="text/javascript">
         alert("Ingrese contraseñas iguales!!!!!");
-        window.location.href="index.php";
+        window.location.href="index";
         </script>';
     }
 ?>
