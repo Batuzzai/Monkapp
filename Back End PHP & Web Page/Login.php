@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    include_once 'conexion_dbs/conexion.php';
+    include_once 'conexion_dbs/conexion.php ';
     $usuario = $_POST['nombre_usuario'];
     $password =$_POST['contrasena'];
 
@@ -13,7 +13,7 @@
     if(!$resultado){
         echo'<script type="text/javascript">
         alert("Usuario o contraseña incorrectos");
-        window.location.href="index.php";
+        window.location.href="index";
         </script>';
         die();
     }
@@ -22,12 +22,12 @@
 
         $_SESSION['user'] = $resultado['id'];  
         
-        header('Location:Pag_principal.php');
+        header('Location:Pag_principal');
     
     }else{
         echo'<script type="text/javascript">
         alert("Usuario o contraseña incorrectos");
-        window.location.href="index.php";
+        window.location.href="index";
         </script>';
         die();
     }
