@@ -1,5 +1,9 @@
-<?php session_start(); ?>
-
+<?php 
+	session_start(); 
+	if(isset($_SESSION['user'])){
+		header('Location:Pag_principal');
+	}
+?>	
 <!DOCTYPE html>
 <html lang = "es">
 <head>
@@ -18,7 +22,7 @@
 				<div></div>
 			</div>
 			<div class="tabs">
-				<form action = "Login.php" method = "POST">
+				<form action = "Login" method = "POST">
 					<div class="inputs">
 						<div class="input">
 							<input placeholder="Nombre de usuario" type="text" name = "nombre_usuario">
@@ -32,7 +36,7 @@
 					<button>Acceder</button>
 				</form>           
                 
-                <form action="Registrar_usuario.php" method = "POST">
+                <form action="Registrar_usuario" method = "POST">
 					<div class="inputs">
                         <div class="input">
 							<input placeholder="Nombre y apellido" type="text" name = "nombre_apellido">
