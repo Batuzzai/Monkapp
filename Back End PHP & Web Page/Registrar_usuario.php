@@ -52,7 +52,7 @@
         alert("Registrado satisfactoriamente");     
         window.location.href="index.php";
         </script>';         // sign up satisfactorio
-                  
+                
     }else{
         $s = NULL;
         $pdo = NULL; // Cierra conexion         // en caso de las pass no ser iguales alerta al usuario

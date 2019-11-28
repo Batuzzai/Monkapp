@@ -1,28 +1,66 @@
 <?php session_start(); ?>
+
 <!DOCTYPE html>
-<html lang = "es">   
-    <head>
-        <meta charset = "UTF-8">
-        <meta name = "viewport" content = "width = device-width, initial-scale=1.0">
-        <meta http-equiv = "X-UA-COMPATIBLE" content = "ie = edge">
-        <title>Registro Monkapp</title>
-    </head>
-    <body>
-        <h2> Registro de usuarios </h2>
-        <form action="Registrar_usuario.php" method = "POST">
-            <input type="text" name = "nombre_apellido" placeholder = "Nombre y apellido"></br></br>
-            <input type="text" name = "correo" placeholder = "Correo electrónico"></br></br>
-            <input type="text" name = "nombre_usuario" placeholder = "Ingresar usuario"></br></br>
-            <input type="password" name = "contrasena" placeholder = "Ingresar contraseña"></br></br>
-            <input type="password" name = "contrasena2" placeholder = "Repetir contraseña"></br></br>
-            <button type="submit"> Registrarse </button>      
-        </form>
-        </br>
-        <form action="Login.php" method = "POST">
-            <input type="text" placeholder = "Usuario" name = "nombre_usuario"></br></br>
-            <input type="password" placeholder = "Contraseña" name = "contrasena"></br></br>
-            <button type="submit"> Iniciar sesion </button> 
-            <a href = "phpMyAdmin"><h4> Entrar a phpMyAdmin </h4></a>    
-        </form>
-    </body>
+<html lang = "es">
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Monkapp Login</title>
+</head>
+<body>
+	<div class="align">
+		<img class="logo" src="img/logo.svg">
+		<div class="card">
+			<div class="head">
+				<div></div>
+				<a id="login" class="selected" href="#login">Login</a>
+				<a id="register" href="#register">Registro</a>
+				<div></div>
+			</div>
+			<div class="tabs">
+				<form action = "Login.php" method = "POST">
+					<div class="inputs">
+						<div class="input">
+							<input placeholder="Nombre de usuario" type="text" name = "nombre_usuario">
+							<img src="img/user.svg">
+						</div>
+						<div class="input">
+							<input placeholder="Contraseña" type="password" name = "contrasena">
+							<img src="img/pass.svg">
+						</div>
+					</div>
+					<button>Acceder</button>
+				</form>           
+                
+                <form action="Registrar_usuario.php" method = "POST">
+					<div class="inputs">
+                        <div class="input">
+							<input placeholder="Nombre y apellido" type="text" name = "nombre_apellido">
+							<img src="img/user.svg">
+						</div>
+                        <div class="input">
+							<input placeholder="Correo electronico" type="text" name = "correo">
+							<img src="img/mail.svg">
+						</div>
+						<div class="input">
+							<input placeholder="Nombre de usuario" type="text" name = "nombre_usuario">
+							<img src="img/user.svg">
+						</div>
+						<div class="input">
+							<input placeholder="Contraseña" type="password" name = "contrasena">
+							<img src="img/pass.svg">
+						</div>
+						<div class="input">
+							<input placeholder="Confirmar contraseña" type="password" name = "contrasena2">
+							<img src="img/pass.svg">
+						</div>
+					</div>
+					<button>Registrarse</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
 </html>

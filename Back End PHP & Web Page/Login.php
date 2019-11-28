@@ -20,7 +20,7 @@
 
     if(password_verify($password, $resultado['contrasena'])){
 
-        $_SESSION['user'] = $resultado['nombre_apellido'];  
+        $_SESSION['user'] = $resultado['id'];  
         
         header('Location:Pag_principal.php');
     
