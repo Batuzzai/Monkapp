@@ -4,8 +4,8 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.TargetApi
 import android.content.pm.PackageManager
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
 import android.app.LoaderManager.LoaderCallbacks
 import android.content.CursorLoader
 import android.content.Loader
@@ -26,9 +26,9 @@ import android.Manifest.permission.READ_CONTACTS
 
 import kotlinx.android.synthetic.main.activity_login.*
 import android.content.Intent
-import android.support.v4.app.SupportActivity
-import android.support.v4.app.SupportActivity.ExtraData
-import android.support.v4.content.ContextCompat.getSystemService
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.widget.Button
 import android.widget.Toast
@@ -66,21 +66,21 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-                if(s.equals("conectadoUsuario o contraseña incorrectos",true)){
+                if(s.contains("Bienvenido",true)){
                         showProgress(true)
                         Toast.makeText(this@LoginActivity, s.toString(), Toast.LENGTH_SHORT).show()
+                        val intent2 = Intent(this@LoginActivity, MainActivity::class.java)
+                        startActivity(intent2)
                         showProgress(false)
 
                 }else{
                     showProgress(true)
                     Toast.makeText(this@LoginActivity, s.toString(), Toast.LENGTH_SHORT).show()
-                    val intent2 = Intent(this@LoginActivity, MainActivity::class.java)
-                    startActivity(intent2)
                     showProgress(false)
                 }
             }, Response.ErrorListener { e ->
                 // Your error code here
-                Toast.makeText(this@LoginActivity, e.toString(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "ERROR AL CONECTAR AL SERVIDOR \n Intentelo de nuevo más tarde", Toast.LENGTH_LONG).show()
 
             }) {
             override fun getParams(): Map<String, String> {

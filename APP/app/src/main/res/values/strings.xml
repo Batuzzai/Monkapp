@@ -32,6 +32,8 @@
 
     <string name="desc">imagen</string>
     <string name="debug">SKIP MENU</string>
+    <string name="send">Enviar</string>
+    <string name="escribir">Escribir aquí</string>
 
     <string name="registro_title">REGISTRO</string>
     <string name="names">Nombre y Apellido</string>
