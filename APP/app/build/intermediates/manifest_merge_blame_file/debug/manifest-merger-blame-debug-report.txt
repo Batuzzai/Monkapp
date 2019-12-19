@@ -1,0 +1,85 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.trecemonos.monkeyapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml
+10    <!-- To auto-complete the email text field in the login form with the user's emails -->
+11    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+11-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:5:5-71
+11-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:5:22-68
+12    <uses-permission android:name="android.permission.READ_PROFILE" />
+12-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:6:5-71
+12-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:6:22-68
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:7:5-67
+13-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:7:22-64
+14
+15    <application
+15-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:9:5-31:19
+16        android:allowBackup="true"
+16-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:10:13-39
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.1.0] C:\Users\chali\.gradle\caches\transforms-2\files-2.1\61a4322994bff311c55a1e748aab7916\core-1.1.0\AndroidManifest.xml:24:18-86
+18        android:debuggable="true"
+19        android:icon="@drawable/monkapp"
+19-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:11:13-45
+20        android:label="@string/app_name"
+20-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:12:13-45
+21        android:roundIcon="@drawable/monkapp"
+21-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:13:13-50
+22        android:supportsRtl="true"
+22-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:14:13-39
+23        android:testOnly="true"
+24        android:theme="@style/AppTheme" >
+24-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:15:13-44
+25        <activity android:name="com.trecemonos.monkeyapp.ChatFragment" />
+25-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:16:9-59
+25-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:16:19-47
+26        <activity android:name="com.trecemonos.monkeyapp.RegisterActivity" />
+26-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:17:9-54
+26-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:17:19-51
+27        <activity
+27-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:18:9-26:20
+28            android:name="com.trecemonos.monkeyapp.LoginActivity"
+28-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:19:17-46
+29            android:label="@string/app_name" >
+29-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:20:17-49
+30            <intent-filter>
+30-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:21:13-25:29
+31                <action android:name="android.intent.action.MAIN" />
+31-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:22:17-69
+31-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:22:25-66
+32
+33                <category android:name="android.intent.category.LAUNCHER" />
+33-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:24:17-77
+33-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:24:27-74
+34            </intent-filter>
+35        </activity>
+36        <activity
+36-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:27:9-30:63
+37            android:name="com.trecemonos.monkeyapp.MainActivity"
+37-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:28:17-45
+38            android:label="@string/title_activity_main"
+38-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:29:17-60
+39            android:theme="@style/AppTheme.NoActionBar" />
+39-->D:\GitHub\MonkeyApp\APP\app\src\main\AndroidManifest.xml:30:17-60
+40
+41        <provider
+41-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\chali\.gradle\caches\transforms-2\files-2.1\7077a31a382867bc615ebdab4c4e3b76\lifecycle-process-2.1.0\AndroidManifest.xml:23:9-27:43
+42            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+42-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\chali\.gradle\caches\transforms-2\files-2.1\7077a31a382867bc615ebdab4c4e3b76\lifecycle-process-2.1.0\AndroidManifest.xml:24:13-79
+43            android:authorities="com.trecemonos.monkeyapp.lifecycle-process"
+43-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\chali\.gradle\caches\transforms-2\files-2.1\7077a31a382867bc615ebdab4c4e3b76\lifecycle-process-2.1.0\AndroidManifest.xml:25:13-69
+44            android:exported="false"
+44-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\chali\.gradle\caches\transforms-2\files-2.1\7077a31a382867bc615ebdab4c4e3b76\lifecycle-process-2.1.0\AndroidManifest.xml:26:13-37
+45            android:multiprocess="true" />
+45-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\chali\.gradle\caches\transforms-2\files-2.1\7077a31a382867bc615ebdab4c4e3b76\lifecycle-process-2.1.0\AndroidManifest.xml:27:13-40
+46    </application>
+47
+48</manifest>
